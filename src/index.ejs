@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
-    <%- include('/head', {head: data.default.head}) %>
+    <%- include('/head', {head: data.head}) %>
   </head>
   <body>
-    <% if (data.default.header) { %>
+    <% if (data.header) { %>
     <header class="page-header">
-      <% if (!utilities.isWrappedInParagraphTags(data.default.header)) { %>
+      <% if (!utilities.isWrappedInParagraphTags(data.header)) { %>
       <p>
-        <% } %> <%- data.default.header %> <% if (!utilities.isWrappedInParagraphTags(data.default.header)) {
+        <% } %> <%- data.header %> <% if (!utilities.isWrappedInParagraphTags(data.header)) {
         %>
       </p>
 
@@ -24,7 +24,7 @@
               <input type="checkbox" name="filter-shortcut" id="all" checked />
               <label for="all">All</label>
             </li>
-            <% data.default.filters.forEach(function(filter){ %>
+            <% data.filters.forEach(function(filter){ %>
             <li>
               <input type="checkbox" name="filter" id="<%= filter %>" checked />
               <label for="<%= filter %>"><%- utilities.sentenceCase(filter) %> </label>
@@ -34,7 +34,7 @@
         </header>
       </div>
       <article class="timeline">
-        <% data.default.entries.forEach(function(entry){ %>
+        <% data.entries.forEach(function(entry){ %>
         <div
           class="timeline-entry"
           data-category="<%= entry.categoriesString %>"
@@ -84,11 +84,11 @@
         <% }); %>
       </article>
     </section>
-    <% if (data.default.footer) { %>
+    <% if (data.footer) { %>
     <footer class="page-footer">
-      <% if (!utilities.isWrappedInParagraphTags(data.default.footer)) { %>
+      <% if (!utilities.isWrappedInParagraphTags(data.footer)) { %>
       <p>
-        <% } %> <%- data.default.footer %> <% if (!utilities.isWrappedInParagraphTags(data.default.footer)) {
+        <% } %> <%- data.footer %> <% if (!utilities.isWrappedInParagraphTags(data.footer)) {
         %>
       </p>
       <% } %>

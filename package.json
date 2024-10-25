@@ -23,10 +23,9 @@
   },
   "homepage": "https://github.com/molly/timeline-template#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "^2.0.1",
     "autoprefixer": "^10.4.13",
     "ejs": "^3.1.6",
-    "eleventy-sass": "^3.0.0-beta.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
@@ -35,6 +34,6 @@
     "postcss": "^8.4.20"
   },
   "dependencies": {
-    "@11ty/eleventy-plugin-ejs": "^1.0.0"
+    "eleventy-sass": "^2.2.6"
   }
 }
