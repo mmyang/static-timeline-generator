@@ -4,17 +4,18 @@ Easily create a static timeline webpage like my [Wikimedia timeline](https://www
 
 **Contents**
 
-- [Install](#install)
-- [Customize](#customize)
-  - [Primary content](#primary-content)
-  - [Meta](#meta)
-- [Additional customization](#additional-customization)
-- [Deploy](#deploy)
-  - [GitHub Pages](#github-pages)
-  - [Other services](#other-services)
-- [Responsiveness](#responsiveness)
-- [Browser compatibility](#browser-compatibility)
-- [Under the hood](#under-the-hood)
+- [Static timeline generator](#static-timeline-generator)
+  - [Install](#install)
+  - [Customize](#customize)
+    - [Primary content](#primary-content)
+    - [Meta](#meta)
+  - [Additional customization](#additional-customization)
+  - [Deploy](#deploy)
+    - [GitHub pages](#github-pages)
+    - [Other services](#other-services)
+  - [Responsiveness](#responsiveness)
+  - [Browser compatibility](#browser-compatibility)
+  - [Under the hood](#under-the-hood)
 
 ![Screenshot of a timeline page with dummy content](docs/browser.png)
 
@@ -26,7 +27,7 @@ Clone this repository, then run `npm install` from the directory.
 
 ## Customize
 
-Almost all of the content you need to change is in `src/_data/content.js`.
+Almost all of the content you need to change is in `src/_data/data.js`.
 
 ### Primary content
 
@@ -67,13 +68,13 @@ If you would like to add more color options for the circles on the timeline, you
 }
 ```
 
-You would then use `color: yourcolorhere` in the content.js file.
+You would then use `color: yourcolorhere` in the data.js file.
 
 Replace the images in the `src/img` folder to customize the page [favicon](https://blog.hubspot.com/website/what-is-a-favicon) and [OpenGraph image](https://blog.hubspot.com/marketing/open-graph-tags-facebook-twitter-linkedin).
 
 ## Deploy
 
-Once you run `npm run-script buld`, you will see a `_site` directory containing static HTML/CSS/JS files with your site content. You can now use any static site hosting to deploy these files!
+Once you run `npm run-script build`, you will see a `_site` directory containing static HTML/CSS/JS files with your site content. You can now use any static site hosting to deploy these files!
 
 ### GitHub pages
 

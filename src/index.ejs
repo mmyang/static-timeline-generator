@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
-    <%- include('/head', {head: content.head}) %>
+    <%- include('/head', {head: data.head}) %>
   </head>
   <body>
-    <% if (content.header) { %>
+    <% if (data.header) { %>
     <header class="page-header">
-      <% if (!utilities.isWrappedInParagraphTags(content.header)) { %>
+      <% if (!utilities.isWrappedInParagraphTags(data.header)) { %>
       <p>
-        <% } %> <%- content.header %> <% if (!utilities.isWrappedInParagraphTags(content.header)) {
+        <% } %> <%- data.header %> <% if (!utilities.isWrappedInParagraphTags(data.header)) {
         %>
       </p>
 
@@ -24,7 +24,7 @@
               <input type="checkbox" name="filter-shortcut" id="all" checked />
               <label for="all">All</label>
             </li>
-            <% content.filters.forEach(function(filter){ %>
+            <% data.filters.forEach(function(filter){ %>
             <li>
               <input type="checkbox" name="filter" id="<%= filter %>" checked />
               <label for="<%= filter %>"><%- utilities.sentenceCase(filter) %> </label>
@@ -34,7 +34,7 @@
         </header>
       </div>
       <article class="timeline">
-        <% content.entries.forEach(function(entry){ %>
+        <% data.entries.forEach(function(entry){ %>
         <div
           class="timeline-entry"
           data-category="<%= entry.categoriesString %>"
@@ -84,11 +84,11 @@
         <% }); %>
       </article>
     </section>
-    <% if (content.footer) { %>
+    <% if (data.footer) { %>
     <footer class="page-footer">
-      <% if (!utilities.isWrappedInParagraphTags(content.footer)) { %>
+      <% if (!utilities.isWrappedInParagraphTags(data.footer)) { %>
       <p>
-        <% } %> <%- content.footer %> <% if (!utilities.isWrappedInParagraphTags(content.footer)) {
+        <% } %> <%- data.footer %> <% if (!utilities.isWrappedInParagraphTags(data.footer)) {
         %>
       </p>
       <% } %>
