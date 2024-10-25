@@ -33,5 +33,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "moment": "^2.29.1",
     "postcss": "^8.4.20"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-ejs": "^1.0.0"
   }
 }
