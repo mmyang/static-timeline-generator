@@ -40,7 +40,17 @@
           data-category="<%= entry.categoriesString %>"
           aria-hidden="false"
         >
-          <div class="timeline-icon <%- entry.color || 'grey' %>" title="<%= entry.faicon %>">
+          <%
+            let divTitle = '';
+            switch (entry.faicon) {
+              case 'cat':
+                divTitle = 'fluffy';
+                break;
+              default:
+                divTitle = entry.faicon;
+            }
+          %>
+          <div class="timeline-icon <%- entry.color || 'grey' %>" title="<%= divTitle %>">
             <% if (entry.faicon) { %>
             <i class="fas fa-<%= entry.faicon %>" aria-hidden="true"></i>
             <% } %>
