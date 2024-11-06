@@ -1,4 +1,5 @@
-@import _colors
+@use "sass:color"
+@use "_colors"
 
 html
 	width: 100%
@@ -7,17 +8,17 @@ html
 body
 	width: 100%
 	height: 100%
-	background-color: $main-background
+	background-color: colors.$main-background
 	font-family: 'Hind Vadodara', sans-serif
 
 h1
 	font-family: 'Roboto Slab', serif
 	margin-top: 0
-	color: $title-color
+	color: colors.$title-color
 
 a
 	text-decoration: none
-	color: $main-link-color
+	color: colors.$main-link-color
 
 	&:hover,
 	&:focus
@@ -25,7 +26,7 @@ a
 
 header.page-header,
 footer.page-footer
-	background-color: $header-footer-background
+	background-color: colors.$header-footer-background
 	padding: 50px 0
 	text-align: center
 
@@ -37,13 +38,13 @@ footer.page-footer
 		margin: 0px auto 10px auto
 
 	a
-		color: $header-footer-link-color
+		color: colors.$header-footer-link-color
 
 footer.page-footer
 	padding: 10px 0
 
 .timeline-filter-wrapper
-	background-color: $filterbar-background
+	background-color: colors.$filterbar-background
 	padding: 10px 0
 
 .timeline-filter
@@ -76,7 +77,7 @@ footer.page-footer
 		left: 50.2%
 		height: 100%
 		width: 4px
-		background: $timeline-line-color
+		background: colors.$timeline-line-color
 
 .timeline-entry
 	position: relative
@@ -98,7 +99,7 @@ footer.page-footer
 	width: 40px
 	height: 40px
 	margin-left: -20px
-	border: 4px solid $timeline-line-color
+	border: 4px solid colors.$timeline-line-color
 	border-radius: 50%
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3)
 	text-align: center
@@ -106,7 +107,7 @@ footer.page-footer
 	z-index: 2
 
 	i
-		color: $timeline-icon-color
+		color: colors.$timeline-icon-color
 		font-size: 20px
 		line-height: 40px
 
@@ -114,7 +115,7 @@ footer.page-footer
 	box-sizing: border-box
 	position: relative
 	width: 45%
-	background-color: $card-background
+	background-color: colors.$card-background
 	padding: 20px
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3)
 	display: inline-block
@@ -125,7 +126,7 @@ footer.page-footer
 		font-size: 80%
 
 		.note
-			color: $timestamp-color
+			color: colors.$timestamp-color
 
 	h2
 		font-family: 'Roboto Slab', serif
@@ -195,7 +196,7 @@ footer.page-footer
 	padding: 30px 0
 
 	h1
-		color: $header-footer-background
+		color: colors.$header-footer-background
 
 	.description
 		font-size: 80%
@@ -203,7 +204,7 @@ footer.page-footer
 
 /* ICON COLORS */
 .timeline-icon
-	@each $name, $color in $icon-colors
+	@each $name, $color in colors.$icon-colors
 		&.#{$name}
 			background-color: $color
 
@@ -211,12 +212,12 @@ footer.page-footer
 @media only screen and (min-width: 769px)
 	.timeline-entry.even .timeline-description:after
 		left: 100%
-		border-left-color: $card-background
+		border-left-color: colors.$card-background
 
 @media only screen and (max-width: 768px) and (min-width: 415px)
 	.timeline-entry.even .timeline-description:after
 		right: 100%
-		border-right-color: $card-background
+		border-right-color: colors.$card-background
 
 @media only screen and (min-width: 415px)
 	.timeline-description:after
@@ -233,7 +234,7 @@ footer.page-footer
 
 	.timeline-entry.odd .timeline-description:after
 		right: 100%
-		border-right-color: $card-background
+		border-right-color: colors.$card-background
 
 @media only screen and (max-width: 768px)
 	.timeline::before,
@@ -276,11 +277,11 @@ footer.page-footer
 // DARK MODE
 @media (prefers-color-scheme: dark)
 	body
-		background-color: $dark-main-background
+		background-color: colors.$dark-main-background
 
 	header.page-header,
 	footer.page-footer
-		background-color: $dark-header-footer-background
+		background-color: colors.$dark-header-footer-background
 
 	body,
 	h1,
@@ -291,48 +292,48 @@ footer.page-footer
 	.timeline-icon i,
 	.attribution,
 	.etc
-		color: $dark-main-color
+		color: colors.$dark-main-color
 
 	.timeline-description a,
 	.attribution a,
 	.etc a
-		color: $dark-link-color
+		color: colors.$dark-link-color
 
 	div.etc h1
-		color: $dark-etc-header-color
+		color: colors.$dark-etc-header-color
 
 	.timeline-description
-		background-color: $dark-card-background
+		background-color: colors.$dark-card-background
 
 	.timeline-filter-wrapper
-		background-color: $dark-filterbar-background
+		background-color: colors.$dark-filterbar-background
 
 	.timeline::before
-		background-color: $dark-timeline-line-color
+		background-color: colors.$dark-timeline-line-color
 
 	.timeline-icon
-		border-color: $dark-timeline-line-color
+		border-color: colors.$dark-timeline-line-color
 
 	.timeline-icon
-		@each $name, $color in $icon-colors
+		@each $name, $color in colors.$icon-colors
 			&.#{$name}
-				background-color: darken($color, 20%)
+				background-color: color.adjust($color, $lightness: -20%)
 
 	/* Arrows */
 	.no-js .timeline-entry .timeline-description::after
-		border-right-color: $dark-card-background
+		border-right-color: colors.$dark-card-background
 
 	@media only screen and (min-width: 769px)
 		.timeline-entry.even .timeline-description::after
-			border-left-color: $dark-card-background
+			border-left-color: colors.$dark-card-background
 
 	@media only screen and (max-width: 768px) and (min-width: 415px)
 		.timeline-entry.even .timeline-description::after
-			border-right-color: $dark-card-background
+			border-right-color: colors.$dark-card-background
 
 	@media only screen and (min-width: 415px)
 		.timeline-entry.odd .timeline-description::after
-			border-right-color: $dark-card-background
+			border-right-color: colors.$dark-card-background
 
 // NO JS FALLBACK
 .no-js
@@ -353,7 +354,7 @@ footer.page-footer
 
 			&:after
 				right: 100%
-				border-right-color: $card-background
+				border-right-color: colors.$card-background
 
 	.timeline-description
 		width: 90%
