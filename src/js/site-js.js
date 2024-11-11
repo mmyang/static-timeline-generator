@@ -43,13 +43,20 @@ function hideUnchecked() {
 }
 
 function checkAll() {
+  // Clicking shortcut checkbox should set all other checkboxes to match
+  var shortcutBox = document.getElementById('all');
+  var shouldBeChecked = shortcutBox.checked;
   var checkboxes = document.querySelectorAll('input[type="checkbox"][name="filter"]');
   checkboxes.forEach(function (box) {
-    box.checked = true;
+    box.checked = shouldBeChecked;
   });
   var entries = document.getElementsByClassName('timeline-entry');
   for (var i = 0; i < entries.length; i++) {
-    show(entries[i]);
+    if (shouldBeChecked) {
+      show(entries[i]);
+    } else {
+      hide(entries[i]);
+    }
   }
   reflowEntries();
 }
